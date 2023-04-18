@@ -1,0 +1,57 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/entrytrue.css" asp-append-version="true" />
+    <title>Добовление контента</title>
+</head>
+<body>
+    <div class="content">
+        @using (Html.BeginForm("EntryTrue", "Home"))
+        {
+            <p> <span>Вставте HTML-код видео:</span> @Html.TextArea("frame","",4,30,null)</p>
+            <p>
+                <span>Добавьте описание(Автор-Название):</span> @Html.TextArea("description","")
+            </p>
+            <input type="submit" value="Отправить">
+        }
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/4jIcmsPXy0E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+
+    <div class="connect">
+    <form asp-controller="Home" asp-action="Index">
+        <p><input type="image" asp-controller="Home" asp-action="Index" src="~/img/Home.png" width="50px" height="50px"></p>
+    </form>
+    <p><a target="_blank" href="https://vk.com/hanazuky"><img src="https://cdn-icons-png.flaticon.com/512/4494/4494517.png" width="50px" height="50px"></a></p>
+    <p><a target="_blank" href="https://www.youtube.com/channel/UCnlnofSaWpOzPHznjzIgdHw"><img src="https://cdn-icons-png.flaticon.com/512/4494/4494485.png" width="50px" height="50px"></a></p>
+        <p><a target="_blank" href="mailto:hanazuky@yandex.ru"><img src="https://cdn-icons-png.flaticon.com/512/6052/6052250.png" width="50px" height="50px"></a></p>
+    </div>
+    @{
+        switch (ViewData["Message"])
+        {
+            case "Кино уже есть":
+                {
+                    <script>alert("Такое видео на сайте уже есть!")</script>
+                    break;
+
+                }
+            case "Не знаю":
+                {
+                    <script>alert("Либо твой код неправелен, либо ты намеренно пытаешься сломать мою программу😠")</script>
+                    break;
+
+                }
+            case "Добавлено":
+                {
+                    <script>alert("Видео успешно добавлено в жанр \"Добавленное\"")</script>
+                    break;
+
+                }
+        }
+    }
+</body>
+</html>
+

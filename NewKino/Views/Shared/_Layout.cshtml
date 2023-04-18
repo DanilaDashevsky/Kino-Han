@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - NewKino</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a class="referense" asp-controller="Home" asp-action="Index">
+                <span class="kino">KINO</span>-<span class="han">HAN</span>
+            </a>
+        </div>
+        <div class="top-menu">
+            <ul class="menu1">
+                <li>
+                    <a class="entryMenuJanr" href="">Жанры</a>
+                    <ul>
+                        <li class="l12"><a asp-controller="Home" asp-action="Index" asp-route-id1="Motiv">Мотивационные</a></li>
+                        <li class="l12"><a asp-controller="Home" asp-action="Index" asp-route-id1="Love">Любовные</a></li>
+                        <li class="l12"><a asp-controller="Home" asp-action="Index" asp-route-id1="Game">Игры</a></li>
+                        @{
+                            if (User.Identity.IsAuthenticated == true)
+                                    {
+                                        <li class="l12"><a asp-controller="Home" asp-action="Index" asp-route-id1="Add">Добавленные</a></li> 
+                                    }
+                            
+                        }
+                    </ul>
+                </li>
+                @{
+                    if (User.Identity.IsAuthenticated == true)
+                        {<li ><a asp-controller="Home" asp-action="EntryTrue">Загрузить видео</a></li>}
+                    else
+                    {
+                        <li><a onclick="alert('Войдите, чтобы воспользоватсья этой функцией')">Загрузить видео</a></li>
+                    }
+
+                 }
+                <li><a asp-controller="Home" asp-action="AboutDeveloper">О разработчике</a></li>
+            </ul>
+        </div>
+
+        <div class="block-register">
+            @{if (User.Identity.IsAuthenticated == true)
+            {
+                    <span><a id="register" asp-controller="Home" asp-action="AlmoreProjekt">Другие проекты</a></span>
+                    <span><a class="entryMenu" asp-controller="Home" asp-action="Logout">Выход</a></span>
+            }
+            else
+            {
+            <span><a id="register" asp-controller="Home" asp-action="Register">Регистрация</a></span>
+            <span><a class="entryMenu"  asp-controller="Home" asp-action="Entry">Вход</a></span>
+            }
+            }
+        </div>
+        <div class="search">
+            @using (Html.BeginForm("Index", "Home"))
+            {
+                @Html.TextBox("id1","",new {type="text",placeholder="Найти..."})
+                <input id="send" type="submit" value="Найти" /> 
+            }
+        </div>
+    </header>
+
+    @{
+        //отправка сообщения пользователю с почты
+        switch (ViewData["Message"])
+        {
+            case "Успешно":
+                {
+
+                    <script>alert("Вы успешно зарегестрировались❤. Логин и пароль отправлены на вашу почту!😜");</script>
+                    break;
+                }
+            case "Вход успешен":
+                {
+
+                    <script>alert("А ты всё-таки прошёл😍");</script>
+                    break;
+                }
+        }
+    }
+        <main role="main" class="container">
+            @RenderBody()
+        </main>
+
+      
+    <footer>
+        <nav>
+            <p><b>Данный сайт не считывает ваш IP и не заносит его в локальную БД создателя😁</b></p>
+            <p><b>Данный сайт не пытается загрузить вирус в фоновом режиме на ваш компьютер😄</b></p>
+            <p><b>Данный сайт не хранит информацию о том, что вы смотрите и какие запросы делаете😅</b></p>
+            <p><b>Данный сайт хочет, чтобы вы ему доверяли🤗</b></p>
+            <p><a href="https://vk.com/hanazuky"><img src="https://cdn-icons-png.flaticon.com/512/4494/4494517.png" width="50" height="50"></a></p>
+            <p><a href="https://www.youtube.com/channel/UCnlnofSaWpOzPHznjzIgdHw"><img src="https://cdn-icons-png.flaticon.com/512/4494/4494485.png" width="50" height="50"></a></p>
+            <p><a href="mailto:hanazuky@yandex.ru"><img src="https://cdn-icons-png.flaticon.com/512/6052/6052250.png" width="50" height="50"></a></p>
+        </nav>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

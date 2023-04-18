@@ -1,0 +1,32 @@
+﻿@model NewKino.Models.Users
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/entry.css" asp-append-version="true" />
+    <title>Вход</title>
+</head>
+<body>
+    <form asp-controller="Home"  asp-action="Entry">
+    <div id="content" class="container">
+        <span class="labelMy">Ты не пройдёшь!!!</span>
+         <input asp-controller="Home" type="image"  asp-action="Index" src="/img/clouse.gif" width="30" height="36">
+            <input asp-for="Email" type="email" placeholder="Эл.почта" id="email">
+            <input asp-for="Password"  type="password" placeholder="Введите пароль" id="password">
+            <input type="submit" value="Вход">
+    </div>
+    </form>
+    @{
+        switch (ViewData["Message"])
+        {
+            case "Отказ":
+                {
+                    <script>alert("Вы неправильно ввели логин или пароль!(А я говорил...)");</script>
+                    break;
+                }
+        }
+    }
+</body>
+</html>

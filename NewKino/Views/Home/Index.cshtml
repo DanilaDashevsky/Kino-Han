@@ -1,0 +1,15 @@
+﻿@using NewKino.Controllers;
+@model List<NewKino.Models.Movie>;
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Kino-Han";
+}
+
+<div id="con" >
+    <ul id="Myul">
+        @foreach (var i in Model)
+        {
+            <li src=@i.href>@Html.Raw(i.html_code)</li>
+        }
+    </ul>
+</div>

@@ -1,0 +1,94 @@
+﻿body {
+    width: 100%;
+    background-color: bisque;
+    background-color:lightcoral;
+    z-index: 0;
+    display: flex;
+    justify-content:center;
+}
+
+.main {
+    z-index: 2;
+    color: rgba(255, 255, 255, 0.89);
+    background-color: black;
+    height: 900px;
+    font-size: 18px;
+    width: 815px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    border-left: double 5px rgb(204, 122, 93);
+    border-right: double 5px rgb(204, 122, 93);
+}
+
+    .main h2 {
+        color: rgb(238, 148, 88);
+    }
+
+.Language {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 19px;
+}
+
+.img {
+    position: relative;
+    right: 3%;
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+
+    .img figcaption {
+        width: 300px;
+        text-align: center;
+    }
+
+.about {
+    position: relative;
+}
+
+.dark {
+    position: absolute;
+    width: 100%;
+    height: 900px;
+    background: rgba(31, 25, 25, 0.8);
+    z-index: 1;
+}
+
+.connect {
+    position:absolute;
+    display: flex;
+    justify-content:center;
+    width: 815px;
+}
+
+    .connect p {
+        margin-left: 15%;
+        padding-top: 20px;
+    }
+/* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+@media (min-width:320px) {  
+    
+}
+/* smartphones, Android phones, landscape iPhone */
+@media (min-width:480px) { 
+}
+/* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
+@media (min-width:600px) { 
+}
+/* tablet, landscape iPad, lo-res laptops ands desktops */
+@media (min-width:801px) { 
+}
+/* big landscape tablets, laptops, and desktops */
+@media (max-width:1075px) {
+    .main {
+        margin-left: 17.5%;
+        font-size: 17px;
+    }
+
+}
+/* hi-res laptops and desktops */
+@media (min-width:1281px) {
+
+}
+

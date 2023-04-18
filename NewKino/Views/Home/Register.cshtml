@@ -1,0 +1,50 @@
+﻿@model NewKino.Models.Users
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/register.css" asp-append-version="true" />
+    <title>Регистрация</title>
+</head>
+<body>
+    <div id="proto" class="protect_open"></div>
+    <form asp-controller="Home" asp-action="Register" >
+        <div id="content" class="container_register">
+            <span class="labelMy">Зарегестрируйтесь, хозяину будет приятно😊</span>
+            <input asp-controller="Home" type="image"  asp-action="Index" src="/img/clouse.gif" width="30" height="36">
+            <input asp-for="Name" type="text" placeholder="Имя" id="name">
+            <input asp-for="Surname" type="text" placeholder="Фамилия" id="surname">
+            <input asp-for="Email" type="email" placeholder="Эл.почта" id="email">
+            <input type="submit" value="Регистрация">
+        </div>
+    </form><!-- Здесь расспологается моя регистрация-->
+    @{
+        switch (ViewData["Message"])
+        {
+            case "Уже есть":
+                {
+                    <script>alert("Пользователь с такими данными уже есть!");</script>
+                    break;
+                }
+            case "Дурак":
+                {
+                    <script>alert("Ячейки не могут быть пустыми😎.Приятно, что ты меня проверяешь");</script>
+                    break;
+                }
+            case "Много":
+                {
+                    <script>alert("Я что, просил тебя всё своё родовое древо рассписать? Слишком длинная фамилия или имя");</script>
+                    break;
+                }
+            case "Успешно":
+                {
+                    
+                    <script>alert("Успешно");</script>
+                    break;
+                }
+        }
+    }
+</body>
+</html>

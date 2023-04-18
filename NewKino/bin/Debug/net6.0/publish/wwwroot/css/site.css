@@ -1,0 +1,199 @@
+body {
+    width: auto;
+    height: auto;
+    margin: 5px auto;
+    background-image: url("https://img.freepik.com/free-vector/terrazzo-floor-tiles-seamless-pattern_1017-31353.jpg?w=1380&t=st=1675847342~exp=1675847942~hmac=0d93110ccf7ebcc653b89f45f1d0d7352c94bfe98a14f225e163b554a4847762");
+}
+
+header {
+    z-index: 2;
+    width: 1015px;
+    height: 80px;
+    background-color: black;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom:auto;
+}
+
+.search {
+    
+    width:auto;
+}
+
+    .search input {
+        display: inline;
+        width: 880px;
+        height: 50px;
+        font-size: 20px;
+        border-color:orange;
+        border-width:3px;
+        border-block-style:double;
+    }
+        #send:hover {
+            color: white;
+            background-color: orange;
+        }
+        .search input::-webkit-input-placeholder {
+            font-size: 20px;
+            border-color: none;
+            border-width: 3px;
+            border-block-style: none;
+        }
+
+#send {
+    width: 115px;
+    height: 54px;
+}
+        ul li a {
+            color: white;
+            font-size: 20px;
+            
+        }
+ul li {
+    margin-top: 17px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+    .block-register span a {
+        float: left;
+        margin-left: 38px;
+        color: white;
+        font-size: 20px;
+        height: 80px;
+        width: 100px;
+        margin-top: 17px;
+        text-decoration: none;
+    }
+
+        .logo {
+            padding-left: 75px;
+            margin-top: 15px;
+            float: left;
+        }
+
+        .kino {
+            font-size: 25px;
+            font-family: Impact, 'Arial Narrow Bold', sans-serif;
+            color: darkblue;
+        }
+
+        .han {
+            font-size: 25px;
+            font-family: Impact, 'Arial Narrow Bold', sans-serif;
+            color: darkred;
+        }
+
+        .referense {
+            font-size: 25px;
+            font-family: Impact, 'Arial Narrow Bold', sans-serif;
+            text-decoration: none;
+        }
+
+        .top-menu ul li a {
+            width: 171px;
+            text-decoration: none;
+        }
+
+        .top-menu ul li {
+            list-style: none;
+            float: left;
+            text-align: center;
+        }
+
+
+
+        footer {
+            padding-top: 0;
+            position: relative;
+            border-top: 1px solid black;
+            width: 100%;
+            height: 120px;
+            margin: 0;
+            background-color: rgba(160, 133, 133, 0.7);
+        }
+
+            footer p {
+                position: relative;
+                font-size: 11px;
+                width: 140px;
+                left: 50px;
+                float: left;
+                margin-left: 70px;
+            }
+
+            footer img {
+                position: relative;
+                padding-bottom: 50px;
+            }
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+.menu1 li {
+    list-style: none;
+    position: relative;
+}
+
+        .menu1 a {
+            height: 35px;
+            font-size: 20px;
+            color: white;
+            text-decoration: none;
+            display: block;
+            width: 400px;
+        }
+
+            .menu1 a:hover {
+                background-color: brown;
+                cursor: pointer;
+            }
+
+        .menu1 ul {
+            position: absolute;
+            top: 100%;
+            display: none;
+            padding: 0;
+        }
+
+        .menu1 li:hover ul {
+            display: block;
+        }
+
+.l12 {
+    margin-top: 0px;
+    background-color: rgb(199, 72, 72);
+}
+
+.container {
+    z-index: 1;
+    background-color: rgba(160, 133, 133, 0.9);
+    margin-left: 40px;
+    margin-right: 40px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    padding-right:40px;
+    margin-top: 150px;
+    border-left: 3px solid burlywood;
+    border-right: 3px solid burlywood;
+}
+    .container ul {
+        text-align: justify;
+        text-align-last: center;
+    }
+        .container ul li {
+            display: inline-block;
+        }
+        .container ul li:nth-last-child(-n+3) {
+            
+        }
+
+    .entryMenu {
+        margin-left: 0;
+    }
+
+
+
+
