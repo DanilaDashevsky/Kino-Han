@@ -19,7 +19,7 @@ internal class Program
     public static SqliteCommand command;
     public static string muvie;
     public static YoutubeClient youtube = new YoutubeClient();
-    public static string token = "6080511031:AAHDEPxJqkd8JEawoXdPG7nLsV__DAWjYMs";
+    public static string token = "";
     public static TelegramBotClient client = new TelegramBotClient(token);
     private static async Task Main(string[] args)
     {
